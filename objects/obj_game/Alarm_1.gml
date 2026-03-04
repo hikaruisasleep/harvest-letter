@@ -1,0 +1,1 @@
+show_tutorial_type = false;
