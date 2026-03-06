@@ -5,7 +5,8 @@
 <p align="center">
   <img src="https://img.shields.io/github/languages/top/anomalystudio/harvest-letter?style=for-the-badge&color=8B4513" alt="Top Language">
   <img src="https://img.shields.io/github/repo-size/anomalystudio/harvest-letter?style=for-the-badge&color=228B22" alt="Repo Size">
-  <img src="https://img.shields.io/github/license/anomalystudio/harvest-letter?style=for-the-badge&color=DAA520" alt="License">
+  <img src="https://img.shields.io/github/license/anomalystudio/harvest-letter?style=for-the-badge&color=DAA520&label=license&logo=creative-commons" alt="License">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=for-the-badge&logo=creative-commons" alt="License: CC BY-NC-SA 4.0"></a>
 </p>
 
 ---
