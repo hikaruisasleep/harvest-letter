@@ -10,8 +10,6 @@
 
 ---
 
-# ⌨️ Harvest Letter
-
 **A cozy typing-based farming simulator 🌾**
 **Rebuild the farm, one word at a time 💌**
 
