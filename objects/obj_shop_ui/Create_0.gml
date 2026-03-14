@@ -1,14 +1,21 @@
-// Pengaturan Visual
-slot_size = 64; 
-gap = 15;
+mode = "buy"; 
+selected_item = -1;
 
-// List barang dari truk
-items_toko = []; 
-if (instance_exists(obj_truck)) {
-    items_toko = obj_truck.shop_items;
-}
+// Posisi Shop (Otomatis ke tengah layar meski origin top-left)
+var _gui_w = display_get_gui_width();
+var _gui_h = display_get_gui_height();
 
-// Mouse Drag Logic
-held_item = -1;        
-held_from = "";        
-held_index = -1;
+sw = sprite_get_width(spr_shopbg);
+sh = sprite_get_height(spr_shopbg);
+
+bx = (_gui_w - sw) / 2;
+by = (_gui_h - sh) / 2;
+
+// --- DAFTAR BARANG ---
+items_buy = [
+    { name: "Carrot's Seed", price: 300, sprite: spr_carrot_seed, qty: 1, object: undefined }
+];
+
+items_sell = [
+    { name: "Carrot", price: 150, sprite: spr_carrot, qty: 1 }
+];
