@@ -1,48 +1,37 @@
 draw_set_alpha(1);
-draw_set_color(c_white);
+draw_set_valign(fa_top); // Kunci alignment agar tidak goyang
+draw_set_halign(fa_left);
 
-// Loop through all menu items
 for (var i = 0; i < array_length(menu_items); i++)
 {
     var item = menu_items[i];
     var tx = item.x;
     var ty = item.y;
     var word = item.text;
-
     var is_current = (i == current_index - 1);
 
-    // Highlight only the one being typed
+    // 1. Gambar Highlight Kotak
     if (is_current && typed_count > 0)
     {
+        draw_set_font(fnt_title); // Gunakan font reguler untuk ukur lebar
         var tw = string_width(word);
         var th = string_height(word);
 
         draw_set_color(make_color_rgb(130, 90, 50));
-        draw_roundrect(
-            tx - highlight_padding,
-            ty - highlight_padding,
-            tx + tw + highlight_padding,
-            ty + th + highlight_padding,
-            false
-        );
+        draw_roundrect(tx - 10, ty - 5, tx + tw + 10, ty + th + 5, false);
     }
 
-    // Split typed vs remaining letters
-    var typed_text = "";
-    var rest_text = word;
+    // 2. Gambar Teks (Typed & Rest)
+    var typed_text = is_current ? string_copy(word, 1, typed_count) : "";
+    var rest_text  = is_current ? string_delete(word, 1, typed_count) : word;
 
-    if (is_current)
-    {
-        typed_text = string_copy(word, 1, typed_count);
-        rest_text  = string_delete(word, 1, typed_count);
-    }
-
-    // Draw typed text in bold
+    // Bagian yang sudah diketik
     draw_set_font(fnt_title_bold);
     draw_set_color(c_white);
     draw_text(tx, ty, typed_text);
 
-    // Draw untyped text in regular font
+    // Bagian sisanya
+    var offset = string_width(typed_text);
     draw_set_font(fnt_title);
-    draw_text(tx + string_width(typed_text), ty, rest_text);
+    draw_text(tx + offset, ty, rest_text);
 }

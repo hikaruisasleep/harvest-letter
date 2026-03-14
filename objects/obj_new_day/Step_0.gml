@@ -10,7 +10,12 @@ if (mouse_check_button_pressed(mb_left)) {
     if (point_in_rectangle(mx, my, bbox_left, bbox_top, bbox_right, bbox_bottom)) {
        
         // --- AKSI TOMBOL ---
-        room_goto(game)
+		global.popup_open = false
+		instance_destroy(obj_tutor_complete)
+		instance_destroy(obj_mainmenu_btn_1)
+        instance_destroy(self)
+		
         
     }
 }
+ 

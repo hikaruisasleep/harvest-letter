@@ -106,8 +106,9 @@ show_tutorial_type = false
 
 show_todolist = false;
 
-global.coins = 0;
+global.coins = 1000;
 global.carrot = 0;
 global.carrotseed = 0;
 global.popup_open = false;
 global.trigger_time = irandom_range(14 * 60, 16 * 60); 
+global.inv_player = array_create(5, -1);

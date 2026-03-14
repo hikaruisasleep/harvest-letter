@@ -11,7 +11,7 @@ if(global.jam_sekarang >= 24)
 {
 	global.jam_sekarang = 0;
 
-	global.hari += +1;
+	global.hari += 1;
 
 	with(obj_time_arrow2) {
 	event_user(0);
@@ -110,5 +110,5 @@ var l79D4C6BF_0 = false;
 l79D4C6BF_0 = instance_exists(obj_popup_qte);
 if(!l79D4C6BF_0)
 {
-	alarm_set(0, (room_speed * 1.4) + alarm_get(0));
+	alarm_set(0, (room_speed * 0.9) + alarm_get(0));
 }

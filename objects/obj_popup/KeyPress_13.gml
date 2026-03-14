@@ -15,9 +15,7 @@ if(string_trim(obj_budi.typedWord) == tugas_list[index_sekarang]){
 		if(index_sekarang >= array_length(tugas_list)){
 			global.popup_open = false;
 			
-			obj_budi.spd = 1			
-		
-			global.carrotseed -= 1;
+			obj_budi.spd = 1	
 			
 			var _plant_the_seeds_exists = instance_exists(obj_planttheseeds)
 			var _water_the_crops_exists = instance_exists(obj_wateryourcrops)

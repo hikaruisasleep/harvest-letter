@@ -34,6 +34,14 @@ var l2F892025_0;l2F892025_0 = keyboard_check_pressed(vk_enter);if (l2F892025_0
 		obj_game.alarm[0] = room_speed * 5;
 		global.carrotseed += 5;
 	
+		/// @DnDAction : YoYo Games.Common.Execute_Code
+		/// @DnDVersion : 1
+		/// @DnDHash : 5016C98F
+		/// @DnDParent : 1A82F2A0
+		/// @DnDArgument : "code" "/// @description Execute Code$(13_10)inventory_sync_to_array();"
+		/// @description Execute Code
+		inventory_sync_to_array();
+	
 		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 		/// @DnDVersion : 1
 		/// @DnDHash : 230FB941
