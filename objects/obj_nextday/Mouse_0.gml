@@ -22,31 +22,27 @@ if(global.jam_sekarang > 12){	/// @DnDAction : YoYo Games.Common.Variable
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 54A2060F
-/// @DnDInput : 8
+/// @DnDInput : 7
 /// @DnDArgument : "expr" "6"
 /// @DnDArgument : "expr_2" "true"
 /// @DnDArgument : "expr_3" "+200"
 /// @DnDArgument : "expr_relative_3" "1"
 /// @DnDArgument : "expr_4" "1"
 /// @DnDArgument : "expr_5" "room_speed * 0.2"
-/// @DnDArgument : "expr_6" "+1"
-/// @DnDArgument : "expr_relative_6" "1"
-/// @DnDArgument : "expr_7" "false"
+/// @DnDArgument : "expr_6" "false"
 /// @DnDArgument : "var" "global.jam_sekarang"
 /// @DnDArgument : "var_1" "global.menit_sekarang"
 /// @DnDArgument : "var_2" "global.hari_sudah_diupdate"
 /// @DnDArgument : "var_3" "obj_budi.y"
 /// @DnDArgument : "var_4" "obj_budi.spd"
 /// @DnDArgument : "var_5" "obj_cycle_time.alarm[0]"
-/// @DnDArgument : "var_6" "obj_growth.image_index"
-/// @DnDArgument : "var_7" "global.popup_open"
+/// @DnDArgument : "var_6" "global.popup_open"
 global.jam_sekarang = 6;
 global.menit_sekarang = 0;
 global.hari_sudah_diupdate = true;
 obj_budi.y += +200;
 obj_budi.spd = 1;
 obj_cycle_time.alarm[0] = room_speed * 0.2;
-obj_growth.image_index += +1;
 global.popup_open = false;
 
 /// @DnDAction : YoYo Games.Common.Temp_Variable

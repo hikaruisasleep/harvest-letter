@@ -29,8 +29,7 @@ for (var i = 0; i < array_length(_list); i++) {
 
     // 1. Klik Pilih Item (Kotak spr_itembg)
     if (click && point_in_rectangle(mx, my, _ix, _iy, _ix + _ibg_w, _iy + _ibg_h)) {
-        selected_item = i;
-        _it.qty = 1;
+        selected_item = i;        
     }
 
     // 2. Klik Minus (Posisi di pojok kiri bawah itembg)
@@ -44,8 +43,11 @@ for (var i = 0; i < array_length(_list); i++) {
     var _plus_x = _ix + _ibg_w - _plus_w - 10;
     var _plus_y = _iy + _ibg_h - _plus_h - 10;
     if (click && point_in_rectangle(mx, my, _plus_x, _plus_y, _plus_x + _plus_w, _plus_y + _plus_h)) {
+		
         if (mode == "sell" && _it.name == "Carrot") {
+			show_debug_message(string(_it.qty))
             _it.qty = min(global.carrot, _it.qty + 1);
+			show_debug_message(string(_it.qty))
         } else {
             _it.qty = min(999, _it.qty + 1);
         }
@@ -65,6 +67,12 @@ if (click && point_in_rectangle(mx, my, _p_x, _p_y, _p_x + _btn_w, _p_y + _btn_h
 
         if (mode == "buy" && global.coins >= _total) {
             if (_sel.name == "Carrot's Seed") global.carrotseed = min(9999, global.carrotseed + _sel.qty);
+			if (_sel.name == "Farm Land") {
+				var _soil_x = global.soil_location[global.soil_index].x
+				var _soil_y = global.soil_location[global.soil_index].y
+				instance_create_layer(_soil_x, _soil_y, "Fields", obj_growth)
+				global.soil_index += 1
+			}
             global.coins -= _total;
             _sel.qty = 1;
         } 
@@ -81,5 +89,7 @@ var _ex = bx + sw - 50;
 var _ey = by + 20;
 if (click && point_in_rectangle(mx, my, _ex, _ey, _ex + 30, _ey + 30)) {
     global.popup_open = false;
+	obj_cycle_time.alarm[0] = room_speed * 0.2;
+	obj_budi.spd = 1;
     instance_destroy();
 }

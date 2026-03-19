@@ -28,4 +28,20 @@ if (global.jam_sekarang >= 18 || global.jam_sekarang <= 5)
 	
 	global.waktu_qte_hari_ini = -1;
 	global.sudah_muncul_hari_ini = false;
-}	
+	
+	// --- 5. Change Day ---
+    global.jam_sekarang = 0;
+    global.hari += 1;
+	
+	// --- 6. Ms. Anne muncul setiap hari ke-3, 6, 9, dst. ---
+    if (global.hari mod 1 == 0) {
+        show_debug_message("Hari ke-" + string(global.hari) + ": Spawn Ms. Anne");
+
+        var anne = instance_create_layer(1503, 217, "Instances", obj_MsAnne);
+
+        with (anne) {
+            event_user(0); // panggil User Event 0 kalau ada
+		}
+	}
+
+}

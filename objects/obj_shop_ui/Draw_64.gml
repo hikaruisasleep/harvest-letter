@@ -1,12 +1,13 @@
 draw_sprite(spr_shopbg, 0, bx, by);
 
-draw_set_font(fnt_main);
+draw_set_font(fnt_title_bold);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 draw_set_color(c_black);
 
-var _title = (mode == "buy") ? "--- BUY SEEDS ---" : "--- SELL HARVEST ---";
+var _title = (mode == "buy") ? "BUY SEEDS" : "SELL HARVEST";
 draw_text(bx + (sw / 2), by + 30, _title);
+draw_set_font(fnt_shop)
 
 var _list = (mode == "buy") ? items_buy : items_sell;
 
@@ -75,9 +76,9 @@ for (var i = 0; i < array_length(_list); i++) {
 var _btn_w = sprite_get_width(spr_purchase);
 var _btn_h = sprite_get_height(spr_purchase);
 var _p_x = bx + (sw / 2) - (_btn_w / 2);
-var _p_y = by + sh - _btn_h - 20;
+var _p_y = by + sh - _btn_h - 30;
 
-draw_sprite(spr_purchase, 0, _p_x, _p_y); //draw sprite untuk Buy/Sell, nanti Venory fix
+draw_sprite((mode == "buy") ? spr_purchase : spr_sell, 0, _p_x, _p_y); //draw sprite untuk Buy/Sell, nanti Venory fix
 draw_set_valign(fa_middle);
 draw_text(_p_x + (_btn_w / 2), _p_y + (_btn_h / 2), (mode == "buy") ? "" : ""); // teks button, biarin kosong aja
 draw_set_valign(fa_top);

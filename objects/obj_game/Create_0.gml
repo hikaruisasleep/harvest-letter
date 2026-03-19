@@ -25,7 +25,20 @@ global.tasks = [
     "Harvest rice paddies", "Feed fish in the pond"
 ];
 
-global.tutor_tasks = ["Plant the seeds", "Water the plants"];
+// Menggunakan data dari Versi 2 karena langkah tutorialnya lebih lengkap
+global.tutor_tasks = [
+    "Open the mail", "Collect the seeds", "Plant the seeds", 
+    "Collect the water", "Water the crops", "Sleep"
+];
+
+global.soil_index = 0
+
+global.soil_location = [
+	{x: 224, y: 1248},
+	{x: 480, y: 1280},
+	{x: 224, y: 1536},
+	{x: 480, y: 1536},
+];
 
 // --- STATE GAME & TUTORIAL ---
 global.tutorial_index = 0; 
@@ -38,13 +51,25 @@ task_index = 0;
 show_tutorial = false;
 show_tutorial_type = false;
 show_todolist = false;
+show_shop_ui = false;
+show_upgradeUI = false;
 
 // --- EKONOMI & INVENTORY (PUSAT DATA) ---
 global.coins = 1000;
 global.carrot = 0;
 global.carrotseed = 0;
-global.waterbucket = 0; // Tambahan agar inventory tidak error
+global.waterbucket = 0; 
 
 global.popup_open = false;
-global.trigger_time = irandom_range(14 * 60, 16 * 60); 
-	
+global.trigger_time = irandom_range(14 * 60, 16 * 60);
+
+// --- SISTEM UPGRADE ---
+global.upgrade_qte_level = 0;
+global.upgrade_water_level = 0;
+global.max_upgrade = 3;
+global.price_qte = 600;
+global.price_water = 600;
+
+global.qte_base_words = 6;
+global.qte_base_reward = 200;
+global.water_max_capacity = 1;

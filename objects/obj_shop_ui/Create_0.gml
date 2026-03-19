@@ -1,5 +1,6 @@
 mode = "buy"; 
 selected_item = -1;
+obj_game.show_shop_ui = true;
 
 // Posisi Shop (Otomatis ke tengah layar meski origin top-left)
 var _gui_w = display_get_gui_width();
@@ -13,7 +14,8 @@ by = (_gui_h - sh) / 2;
 
 // --- DAFTAR BARANG ---
 items_buy = [
-    { name: "Carrot's Seed", price: 300, sprite: spr_carrot_seed, qty: 1, object: undefined }
+    { name: "Carrot's Seed", price: 300, sprite: spr_carrot_seed, qty: 1, object: undefined },
+	{ name: "Farm Land", price: 1000, sprite: spr_growth_shop , qty: 1, object: undefined }
 ];
 
 items_sell = [

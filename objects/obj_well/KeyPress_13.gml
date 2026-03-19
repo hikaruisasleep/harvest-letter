@@ -1,38 +1,41 @@
 if (player_near) {
-    if (obj_budi.typedWord == "collect water" || obj_budi.typedWord == "collectwater") {
-        if (global.tutorial_index = 0 && show_collectwater == true){
-            // Give water bucket
-            with (obj_inventory) {
-				if (global.waterbucket = 0){
-					global.waterbucket += 1
-					show_debug_message("Water bucket added")
-				}         
+    var _typed = string_lower(obj_budi.typedWord);
+    
+    if (_typed == "collect water" || _typed == "collectwater") {
+        
+        // --- FASE TUTORIAL (Index 0) ---
+        if (global.tutorial_index == 0 && show_collectwater == true) {
+            // Isi air langsung sampai batas maksimal (hasil upgrade)
+            global.waterbucket = global.water_max_capacity;
+            show_debug_message("Water bucket filled (Tutorial)");
+
+            if (instance_exists(obj_quest_manager)) {
+                obj_quest_manager.complete_quest("collect_water");
             }
 
-            // Complete first tutorial task
+            // Selesaikan tutorial
             global.tutorial_index = 1;
-			show_collectwater = false;
-			obj_wateryourcrops.showing = true;
-		}
-		else if (global.tutorial_index = 1){
-            // Give water bucket
-            with (obj_inventory) {
-				if (global.waterbucket = 0){
-					global.waterbucket += 1
-					show_debug_message("Water bucket added")
-				}
-				
-				else {
-					show_message("You can only hold 1 water bucket")
-				}
+            show_collectwater = false;
+            obj_wateryourcrops.showing = true;
+        }
+        
+        // --- FASE SETELAH TUTORIAL ---
+        else if (global.tutorial_index == 1) {
+            if (global.waterbucket < global.water_max_capacity) {
+                global.waterbucket = global.water_max_capacity;
+                show_debug_message("Water bucket filled");
                 
+                // [TAMBAHAN BARU] Lapor ke Quest Manager juga di sini
+                if (instance_exists(obj_quest_manager)) {
+                    obj_quest_manager.complete_quest("collect_water");
+                }
+            } 
+            else {
+                show_message("Ember penuh! Maks: " + string(global.water_max_capacity));
             }
-
-            // Complete first tutorial task
-            global.tutorial_index = 1;
-			show_collectwater = false;
-		}
-		
+            
+            show_collectwater = false;
+        }
     }
 }
 

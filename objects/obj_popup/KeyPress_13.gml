@@ -20,6 +20,15 @@ if(string_trim(obj_budi.typedWord) == tugas_list[index_sekarang]){
 			var _plant_the_seeds_exists = instance_exists(obj_planttheseeds)
 			var _water_the_crops_exists = instance_exists(obj_wateryourcrops)
 			
+			// --- A. QUEST MANAGER ---
+        if (instance_exists(obj_quest_manager)) {
+            if (_plant_the_seeds_exists && global.carrotseed > 0) {
+                obj_quest_manager.complete_quest("plant_seeds");
+            } else if (_water_the_crops_exists) {
+                obj_quest_manager.complete_quest("water_crops");
+            }
+        }
+			
 			if(_plant_the_seeds_exists){
 				obj_planttheseeds.image_index = 1
 				obj_planttheseeds.alarm[0] = room_speed * 3;

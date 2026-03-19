@@ -45,6 +45,10 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
     }
     
     // --- STAGE 2: PANEN ---
-    // Logika panen biasanya ada di obj_budi saat menekan Enter, 
-    // tapi pastikan stage bertambah agar instruksi "collect" muncul.
+    else if (stage == 2) {
+		stage = 0;
+		image_index = 0;
+		word = "plant";
+		global.carrot += 5;
+	}
 }

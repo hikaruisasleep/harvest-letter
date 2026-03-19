@@ -37,6 +37,15 @@ var l2F892025_0;l2F892025_0 = keyboard_check_pressed(vk_enter);if (l2F892025_0
 		global.carrotseed += 5;
 		global.carrot = 5;
 	
+		/// @DnDAction : YoYo Games.Common.Execute_Code
+		/// @DnDVersion : 1
+		/// @DnDHash : 7ECD583E
+		/// @DnDParent : 1A82F2A0
+		/// @DnDArgument : "code" "if (instance_exists(obj_quest_manager)) {$(13_10)    obj_quest_manager.complete_quest("collect_seeds");$(13_10)}"
+		if (instance_exists(obj_quest_manager)) {
+		    obj_quest_manager.complete_quest("collect_seeds");
+		}
+	
 		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 		/// @DnDVersion : 1
 		/// @DnDHash : 230FB941
