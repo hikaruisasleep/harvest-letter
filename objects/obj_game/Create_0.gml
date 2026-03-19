@@ -58,6 +58,8 @@ show_upgradeUI = false;
 global.coins = 1000;
 global.carrot = 0;
 global.carrotseed = 0;
+global.potato = 0;
+global.potatoseed = 0;
 global.waterbucket = 0; 
 
 global.popup_open = false;

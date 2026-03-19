@@ -14,5 +14,13 @@ function inventory_sync_to_array() {
         };
     }
     
-    // Kamu bisa tambah item lain di slot index 1, 2, dst.
+    // 3. Stacking untuk Kentang
+    if (global.potatoseed > 0) {
+        global.inv_player[1] = { 
+            name: "Potato Seed", 
+            price: 50, 
+            sprite: spr_carrot_seed,
+            amount: global.potatoseed 
+        };
+    }
 }

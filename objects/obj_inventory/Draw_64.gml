@@ -54,7 +54,19 @@ if (global.carrotseed > 0) {
     _slot_index++;
 }
 
-// C. Ember Air
+// C. Kentang (Hasil Panen)
+if (global.potato > 0) {
+    draw_item_slot(spr_carrot, global.potato, box_x, box_y, _slot_index); // Using spr_carrot as placeholder
+    _slot_index++;
+}
+
+// D. Bibit Kentang (Stacking)
+if (global.potatoseed > 0) {
+    draw_item_slot(spr_carrot_seed, global.potatoseed, box_x, box_y, _slot_index); // Using spr_carrot_seed as placeholder
+    _slot_index++;
+}
+
+// E. Ember Air
 if (global.waterbucket > 0) {
     draw_item_slot(spr_waterbucket, global.waterbucket, box_x, box_y, _slot_index); // Pastikan nama spritenya spr_water_bucket
     _slot_index++;

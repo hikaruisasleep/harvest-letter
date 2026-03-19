@@ -30,6 +30,7 @@ is_watered = false;
 task_index = irandom_range(0, array_length(global.tutor_tasks)-1);
 task = global.tutor_tasks[task_index];
 completed = false;
+plant_type = "";
 
 /// @DnDAction : YoYo Games.Common.Function_Call
 /// @DnDVersion : 1

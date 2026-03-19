@@ -15,9 +15,11 @@ by = (_gui_h - sh) / 2;
 // --- DAFTAR BARANG ---
 items_buy = [
     { name: "Carrot's Seed", price: 300, sprite: spr_carrot_seed, qty: 1, object: undefined },
+    { name: "Potato's Seed", price: 200, sprite: spr_carrot_seed, qty: 1, object: undefined },
 	{ name: "Farm Land", price: 1000, sprite: spr_growth_shop , qty: 1, object: undefined }
 ];
 
 items_sell = [
-    { name: "Carrot", price: 150, sprite: spr_carrot, qty: 1 }
+    { name: "Carrot", price: 150, sprite: spr_carrot, qty: 1 },
+    { name: "Potato", price: 100, sprite: spr_carrot, qty: 1 }
 ];
