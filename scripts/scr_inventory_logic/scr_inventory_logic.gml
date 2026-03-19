@@ -23,4 +23,14 @@ function inventory_sync_to_array() {
             amount: global.potatoseed 
         };
     }
+
+    // 4. Grass
+    if (global.grass > 0) {
+        global.inv_player[2] = {
+            name: "Grass",
+            price: 50,
+            sprite: spr_grass,
+            amount: global.grass
+        };
+    }
 }

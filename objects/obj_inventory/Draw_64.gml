@@ -66,7 +66,19 @@ if (global.potatoseed > 0) {
     _slot_index++;
 }
 
-// E. Ember Air
+// E. Rumput (Cow Feed)
+if (global.grass > 0) {
+    draw_item_slot(spr_grass, global.grass, box_x, box_y, _slot_index);
+    _slot_index++;
+}
+
+// F. Susu (Product)
+if (global.milk > 0) {
+    draw_item_slot(spr_waterbucket, global.milk, box_x, box_y, _slot_index); // Using spr_waterbucket as placeholder
+    _slot_index++;
+}
+
+// G. Ember Air
 if (global.waterbucket > 0) {
     draw_item_slot(spr_waterbucket, global.waterbucket, box_x, box_y, _slot_index); // Pastikan nama spritenya spr_water_bucket
     _slot_index++;

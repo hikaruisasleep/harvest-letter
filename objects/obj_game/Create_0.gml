@@ -60,6 +60,8 @@ global.carrot = 0;
 global.carrotseed = 0;
 global.potato = 0;
 global.potatoseed = 0;
+global.grass = 0;
+global.milk = 0;
 global.waterbucket = 0; 
 
 global.popup_open = false;

@@ -46,33 +46,35 @@ for (var i = 0; i < array_length(_list); i++) {
 		
         if (mode == "sell") {
             if (_it.name == "Carrot") _it.qty = min(global.carrot, _it.qty + 1);
-            else if (_it.name == "Potato") _it.qty = min(global.potato, _it.qty + 1);
+            else if (_it.name == "Potato") _it.qty = min(global.potato, _it.qty + 1);        
+            else if (_it.name == "Milk") _it.qty = min(global.milk, _it.qty + 1);
         } else {
             _it.qty = min(999, _it.qty + 1);
         }
-    }
-}
+        }
+        }
 
-// 4. Klik Tombol Purchase/Sell (Tengah Bawah)
-var _btn_w = sprite_get_width(spr_purchase);
-var _btn_h = sprite_get_height(spr_purchase);
-var _p_x = bx + (sw / 2) - (_btn_w / 2);
-var _p_y = by + sh - _btn_h - 20;
+        // 4. Klik Tombol Purchase/Sell (Tengah Bawah)
+        var _btn_w = sprite_get_width(spr_purchase);
+        var _btn_h = sprite_get_height(spr_purchase);
+        var _p_x = bx + (sw / 2) - (_btn_w / 2);
+        var _p_y = by + sh - _btn_h - 20;
 
-if (click && point_in_rectangle(mx, my, _p_x, _p_y, _p_x + _btn_w, _p_y + _btn_h)) {
-    if (selected_item != -1) {
+        if (click && point_in_rectangle(mx, my, _p_x, _p_y, _p_x + _btn_w, _p_y + _btn_h)) {
+        if (selected_item != -1) {
         var _sel = _list[selected_item];
         var _total = _sel.price * _sel.qty;
 
         if (mode == "buy" && global.coins >= _total) {
             if (_sel.name == "Carrot's Seed") global.carrotseed = min(9999, global.carrotseed + _sel.qty);
             else if (_sel.name == "Potato's Seed") global.potatoseed = min(9999, global.potatoseed + _sel.qty);
-			else if (_sel.name == "Farm Land") {
-				var _soil_x = global.soil_location[global.soil_index].x
-				var _soil_y = global.soil_location[global.soil_index].y
-				instance_create_layer(_soil_x, _soil_y, "Fields", obj_growth)
-				global.soil_index += 1
-			}
+            else if (_sel.name == "Grass") global.grass = min(9999, global.grass + _sel.qty);
+        else if (_sel.name == "Farm Land") {
+        var _soil_x = global.soil_location[global.soil_index].x
+        var _soil_y = global.soil_location[global.soil_index].y
+        instance_create_layer(_soil_x, _soil_y, "Fields", obj_growth)
+        global.soil_index += 1
+        }
             global.coins -= _total;
             _sel.qty = 1;
         } 
@@ -87,10 +89,14 @@ if (click && point_in_rectangle(mx, my, _p_x, _p_y, _p_x + _btn_w, _p_y + _btn_h
                 global.coins += _total;
                 _sel.qty = 1;
             }
+            else if (_sel.name == "Milk" && global.milk >= _sel.qty) {
+                global.milk -= _sel.qty;
+                global.coins += _total;
+                _sel.qty = 1;
+            }
         }
-    }
-}
-
+        }
+        }
 // 5. Klik Tombol X (Pojok Kanan Atas)
 var _ex = bx + sw - 50;
 var _ey = by + 20;
