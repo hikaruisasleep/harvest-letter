@@ -6,7 +6,7 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
         if (global.grass > 0) {        
             obj_budi.typedWord = "";
             stage = 1;
-            word = "milk";
+            word = "collect";
             
             // Kurangi grass
             global.grass -= 1;

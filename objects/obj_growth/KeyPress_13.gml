@@ -46,7 +46,7 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
         instance_create_layer(room_width / 2, room_height / 2, "UI", obj_popup);
         
         stage = 2;
-        word = "harvest"; // Changed from "collect" for better feedback
+        word = "collect"; 
         is_watered = true;
         image_index = 2; // Stage 2: Ready to harvest
         
