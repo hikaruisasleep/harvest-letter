@@ -40,6 +40,13 @@ global.soil_location = [
 	{x: 480, y: 1536},
 ];
 
+global.chicken_index = 0;
+global.chicken_location = [
+    {x: 600, y: 352},
+    {x: 700, y: 352},
+    {x: 800, y: 352},
+];
+
 // --- STATE GAME & TUTORIAL ---
 global.tutorial_index = 0; 
 assigned_tasks = [];
@@ -62,6 +69,7 @@ global.potato = 0;
 global.potatoseed = 0;
 global.grass = 0;
 global.milk = 0;
+global.egg = 0;
 global.waterbucket = 0; 
 
 global.popup_open = false;

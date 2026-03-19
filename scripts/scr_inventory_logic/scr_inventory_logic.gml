@@ -33,4 +33,14 @@ function inventory_sync_to_array() {
             amount: global.grass
         };
     }
+
+    // 5. Eggs
+    if (global.egg > 0) {
+        global.inv_player[3] = {
+            name: "Egg",
+            price: 30,
+            sprite: spr_dots,
+            amount: global.egg
+        };
+    }
 }

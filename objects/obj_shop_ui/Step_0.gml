@@ -48,6 +48,7 @@ for (var i = 0; i < array_length(_list); i++) {
             if (_it.name == "Carrot") _it.qty = min(global.carrot, _it.qty + 1);
             else if (_it.name == "Potato") _it.qty = min(global.potato, _it.qty + 1);        
             else if (_it.name == "Milk") _it.qty = min(global.milk, _it.qty + 1);
+            else if (_it.name == "Egg") _it.qty = min(global.egg, _it.qty + 1);
         } else {
             _it.qty = min(999, _it.qty + 1);
         }
@@ -75,7 +76,14 @@ for (var i = 0; i < array_length(_list); i++) {
         instance_create_layer(_soil_x, _soil_y, "Fields", obj_growth)
         global.soil_index += 1
         }
-            global.coins -= _total;
+        else if (_sel.name == "Chicken") {
+        var _chk_x = global.chicken_location[global.chicken_index].x
+        var _chk_y = global.chicken_location[global.chicken_index].y
+        instance_create_layer(_chk_x, _chk_y, "Instances", obj_chicken)
+        global.chicken_index += 1
+        }
+        global.coins -= _total;
+
             _sel.qty = 1;
         } 
         else if (mode == "sell") {
@@ -91,6 +99,11 @@ for (var i = 0; i < array_length(_list); i++) {
             }
             else if (_sel.name == "Milk" && global.milk >= _sel.qty) {
                 global.milk -= _sel.qty;
+                global.coins += _total;
+                _sel.qty = 1;
+            }
+            else if (_sel.name == "Egg" && global.egg >= _sel.qty) {
+                global.egg -= _sel.qty;
                 global.coins += _total;
                 _sel.qty = 1;
             }

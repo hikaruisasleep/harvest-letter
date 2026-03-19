@@ -78,7 +78,13 @@ if (global.milk > 0) {
     _slot_index++;
 }
 
-// G. Ember Air
+// G. Telur (Product)
+if (global.egg > 0) {
+    draw_item_slot(spr_dots, global.egg, box_x, box_y, _slot_index); // Using spr_dots as placeholder
+    _slot_index++;
+}
+
+// H. Ember Air
 if (global.waterbucket > 0) {
     draw_item_slot(spr_waterbucket, global.waterbucket, box_x, box_y, _slot_index); // Pastikan nama spritenya spr_water_bucket
     _slot_index++;
