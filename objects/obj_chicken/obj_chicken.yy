@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"spr_cow",
-    "path":"sprites/spr_cow/spr_cow.yy",
+    "name":"spr_chicken",
+    "path":"sprites/spr_chicken/spr_chicken.yy",
   },
   "spriteMaskId":null,
   "visible":true,

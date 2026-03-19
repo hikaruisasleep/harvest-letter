@@ -11,6 +11,6 @@ if(is_colliding){
 	draw_text(x, icon_y, word)
 } else {
 	if(is_ready){
-		draw_sprite_ext(spr_dots, 0, x, icon_y, 1.5, 1.5, 0, c_white, 1)	// Egg placeholder
+		draw_sprite_ext(spr_egg, 0, x, icon_y, 1.0, 1.0, 0, c_white, 1)	// Use egg sprite
 	}
 }

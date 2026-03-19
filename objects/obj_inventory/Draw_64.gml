@@ -56,13 +56,13 @@ if (global.carrotseed > 0) {
 
 // C. Kentang (Hasil Panen)
 if (global.potato > 0) {
-    draw_item_slot(spr_carrot, global.potato, box_x, box_y, _slot_index); // Using spr_carrot as placeholder
+    draw_item_slot(spr_potato, global.potato, box_x, box_y, _slot_index);
     _slot_index++;
 }
 
 // D. Bibit Kentang (Stacking)
 if (global.potatoseed > 0) {
-    draw_item_slot(spr_carrot_seed, global.potatoseed, box_x, box_y, _slot_index); // Using spr_carrot_seed as placeholder
+    draw_item_slot(spr_potato_seed, global.potatoseed, box_x, box_y, _slot_index);
     _slot_index++;
 }
 
@@ -74,13 +74,13 @@ if (global.grass > 0) {
 
 // F. Susu (Product)
 if (global.milk > 0) {
-    draw_item_slot(spr_waterbucket, global.milk, box_x, box_y, _slot_index); // Using spr_waterbucket as placeholder
+    draw_item_slot(spr_milk, global.milk, box_x, box_y, _slot_index);
     _slot_index++;
 }
 
 // G. Telur (Product)
 if (global.egg > 0) {
-    draw_item_slot(spr_dots, global.egg, box_x, box_y, _slot_index); // Using spr_dots as placeholder
+    draw_item_slot(spr_egg, global.egg, box_x, box_y, _slot_index);
     _slot_index++;
 }
 

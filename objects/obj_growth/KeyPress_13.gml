@@ -26,8 +26,14 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
         image_index = 1; // Stage 1: Growing
         
         // Color feedback for plant type
-        if (plant_type == "carrot") image_blend = c_white;
-        else if (plant_type == "potato") image_blend = make_color_rgb(200, 180, 150); // Brownish tint
+        if (plant_type == "carrot") {
+			sprite_index = spr_growth;
+			image_blend = c_white;
+		}
+        else if (plant_type == "potato") {
+			sprite_index = spr_potat_growth;
+			image_blend = c_white;
+		}
         
         // Munculkan popup QTE
         instance_create_layer(room_width / 2, room_height / 2, "UI", obj_popup);
@@ -60,6 +66,7 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
 		image_index = 0;
 		word = "plant";
         image_blend = c_white; // Reset color
+		sprite_index = spr_growth; // Reset sprite
         
         if (plant_type == "carrot") {
 		    global.carrot += 5;

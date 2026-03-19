@@ -19,7 +19,7 @@ function inventory_sync_to_array() {
         global.inv_player[1] = { 
             name: "Potato Seed", 
             price: 50, 
-            sprite: spr_carrot_seed,
+            sprite: spr_potato_seed,
             amount: global.potatoseed 
         };
     }
@@ -39,8 +39,18 @@ function inventory_sync_to_array() {
         global.inv_player[3] = {
             name: "Egg",
             price: 30,
-            sprite: spr_dots,
+            sprite: spr_egg,
             amount: global.egg
         };
     }
-}
+
+    // 6. Milk
+    if (global.milk > 0) {
+        global.inv_player[4] = {
+            name: "Milk",
+            price: 100,
+            sprite: spr_milk,
+            amount: global.milk
+        };
+    }
+    }
