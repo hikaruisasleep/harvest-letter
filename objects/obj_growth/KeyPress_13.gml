@@ -1,22 +1,58 @@
 // Cek apakah kata yang diketik Budi cocok dengan target word dan Budi sedang berada di lahan ini
-if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
+var input = obj_budi.typedWord;
+var can_act = false;
+
+if (instance_place(x, y, obj_budi)) {
+    if (stage == 0) {
+        if (input == "plant" || input == "plant carrot" || input == "plant potato") {
+            can_act = true;
+        }
+    } else {
+        if (input == word) {
+            can_act = true;
+        }
+    }
+}
+
+if (can_act) {
     
     // --- STAGE 0: MENANAM ---
     if (stage == 0) {
-        // Cek apakah ada bibit (Cek Wortel dulu, baru Kentang)
-        if (global.carrotseed > 0) {        
-            plant_type = "carrot";
-            global.carrotseed -= 1;
-        } 
-        else if (global.potatoseed > 0) {
-            plant_type = "potato";
-            global.potatoseed -= 1;
-        }
-        else {
-            // Jika tidak ada bibit
-            show_message("Kamu tidak punya bibit!");
-            obj_budi.typedWord = "";
-            return;
+        // Cek input spesifik atau default
+        if (input == "plant carrot") {
+            if (global.carrotseed > 0) {
+                plant_type = "carrot";
+                global.carrotseed -= 1;
+            } else {
+                show_message("Kamu tidak punya bibit wortel!");
+                obj_budi.typedWord = "";
+                return;
+            }
+        } else if (input == "plant potato") {
+            if (global.potatoseed > 0) {
+                plant_type = "potato";
+                global.potatoseed -= 1;
+            } else {
+                show_message("Kamu tidak punya bibit kentang!");
+                obj_budi.typedWord = "";
+                return;
+            }
+        } else { // Jika mengetik "plant" saja
+            // Cek apakah ada bibit (Cek Wortel dulu, baru Kentang)
+            if (global.carrotseed > 0) {        
+                plant_type = "carrot";
+                global.carrotseed -= 1;
+            } 
+            else if (global.potatoseed > 0) {
+                plant_type = "potato";
+                global.potatoseed -= 1;
+            }
+            else {
+                // Jika tidak ada bibit
+                show_message("Kamu tidak punya bibit!");
+                obj_budi.typedWord = "";
+                return;
+            }
         }
 
         // Reset ketikan Budi & Lanjut ke tahap siram
@@ -75,5 +111,6 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
         }
         
         plant_type = "";
+        obj_budi.typedWord = "";
 	}
 }
