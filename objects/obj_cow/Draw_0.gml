@@ -10,8 +10,6 @@ if(is_colliding){
 	if(stage == 0){
 		draw_sprite_ext(spr_grass, 0, x, y - 320, 0.4, 0.4, 0, c_white, 1)	
 	} else if (stage == 1){
-		draw_sprite(spr_water, 0, x, y - 320)
-	} else if (stage == 2){
         draw_sprite_ext(spr_waterbucket, 0, x, y - 320, 1, 1, 0, c_white, 1) // Milk bucket placeholder
     }
 }

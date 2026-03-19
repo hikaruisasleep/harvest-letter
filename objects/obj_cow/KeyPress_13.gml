@@ -1,4 +1,4 @@
-// Replicated from obj_growth/KeyPress_13.gml
+// Simplified cow interaction: Feed -> Milk
 if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
     
     // --- STAGE 0: FEEDING ---
@@ -6,7 +6,7 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
         if (global.grass > 0) {        
             obj_budi.typedWord = "";
             stage = 1;
-            word = "water";
+            word = "milk";
             
             // Kurangi grass
             global.grass -= 1;
@@ -21,30 +21,11 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
         }
     } 
     
-    // --- STAGE 1: WATERING ---
+    // --- STAGE 1: MILKING ---
     else if (stage == 1) {
-        // Cek apakah player punya ember air
-        if (global.waterbucket <= 0) {
-            show_message("You need water!");
-            obj_budi.typedWord = "";
-            return;
-        }
-        
-        obj_budi.typedWord = "";
-        instance_create_layer(room_width / 2, room_height / 2, "UI", obj_popup);
-        
-        stage = 2;
-        word = "milk";
-        is_watered = true;
-        
-        // Kurangi ember air
-        global.waterbucket -= 1;
-    }
-    
-    // --- STAGE 2: MILKING ---
-    else if (stage == 2) {
 		stage = 0;
 		word = "feed";
 		global.milk += 2;
+        obj_budi.typedWord = "";
 	}
 }
