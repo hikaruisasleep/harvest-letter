@@ -84,9 +84,15 @@ for(i = 0; i < array_length(fields); i += 1) {	/// @DnDAction : YoYo Games.Comm
 		/// @DnDArgument : "expr" "+1"
 		/// @DnDArgument : "expr_relative" "1"
 		/// @DnDArgument : "var" "field.image_index"
-		field.image_index += +1;}}
+		field.image_index += +1;}}
 
-/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+		// Increment chicken day counter
+		with(obj_chicken) {
+		day_counter += 1;
+		}
+
+		/// @DnDAction : YoYo Games.Instances.Destroy_Instance
+
 /// @DnDVersion : 1
 /// @DnDHash : 08A2F97F
 /// @DnDApplyTo : {obj_blur}

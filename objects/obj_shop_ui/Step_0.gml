@@ -67,20 +67,14 @@ for (var i = 0; i < array_length(_list); i++) {
         var _total = _sel.price * _sel.qty;
 
         if (mode == "buy" && global.coins >= _total) {
-            if (_sel.name == "Carrot's Seed") global.carrotseed = min(9999, global.carrotseed + _sel.qty);
-            else if (_sel.name == "Potato's Seed") global.potatoseed = min(9999, global.potatoseed + _sel.qty);
+            if (_sel.name == "Carrot Seed") global.carrotseed = min(9999, global.carrotseed + _sel.qty);
+            else if (_sel.name == "Potato Seed") global.potatoseed = min(9999, global.potatoseed + _sel.qty);
             else if (_sel.name == "Grass") global.grass = min(9999, global.grass + _sel.qty);
         else if (_sel.name == "Farm Land") {
         var _soil_x = global.soil_location[global.soil_index].x
         var _soil_y = global.soil_location[global.soil_index].y
         instance_create_layer(_soil_x, _soil_y, "Fields", obj_growth)
         global.soil_index += 1
-        }
-        else if (_sel.name == "Chicken") {
-        var _chk_x = global.chicken_location[global.chicken_index].x
-        var _chk_y = global.chicken_location[global.chicken_index].y
-        instance_create_layer(_chk_x, _chk_y, "Instances", obj_chicken)
-        global.chicken_index += 1
         }
         global.coins -= _total;
 

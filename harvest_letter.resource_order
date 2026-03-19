@@ -36,6 +36,7 @@
     {"name":"obj_budi","order":1,"path":"objects/obj_budi/obj_budi.yy",},
     {"name":"obj_caption","order":13,"path":"objects/obj_caption/obj_caption.yy",},
     {"name":"obj_carrot","order":31,"path":"objects/obj_carrot/obj_carrot.yy",},
+    {"name":"obj_chicken","order":71,"path":"objects/obj_chicken/obj_chicken.yy",},
     {"name":"obj_cloud","order":61,"path":"objects/obj_cloud/obj_cloud.yy",},
     {"name":"obj_coin_ui","order":24,"path":"objects/obj_coin_ui/obj_coin_ui.yy",},
     {"name":"obj_coin","order":23,"path":"objects/obj_coin/obj_coin.yy",},

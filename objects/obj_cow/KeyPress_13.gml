@@ -25,7 +25,7 @@ if (obj_budi.typedWord == word && instance_place(x, y, obj_budi)) {
     else if (stage == 1) {
 		stage = 0;
 		word = "feed";
-		global.milk += 2;
+		global.milk += 1;
         obj_budi.typedWord = "";
 	}
 }
